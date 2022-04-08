@@ -1,0 +1,565 @@
+
+/* start global */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+ :root {
+    --main-color: #19c8fa;
+    --second-color: rgb(15 116 143 / 70%);
+}
+ul {
+    list-style: none;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* end global */
+
+/* start body */
+/* header */
+header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 5;
+}
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.473);
+}
+
+header .container .kasper {
+    margin: 15px;
+    padding: 15px;
+    position: relative;
+}
+header .container .kasper i { 
+    font-size: 50px;   
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: var(--main-color);
+}
+header .container .kasper p {
+    text-transform: uppercase;
+    font-size: 12px;  
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    color: var(--second-color);
+}
+header .container .kasper h2 { 
+    font-size: 30px;   
+    padding-left: 40px;
+    color: white;
+}
+header .container .links {
+    position: relative;
+}
+header .container .links>i {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 10px);
+    font-size: 20px;
+    color: white;
+}
+
+header .container .links nav i {
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 10px);
+    font-size: 20px;
+    color: white;
+    display: none;
+}
+@media (max-width: 768px) {
+    header .container .links nav i + ul {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    header .container .links nav i {
+        display: block;
+    }
+    header .container .links nav i:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 25px;
+        border-right: none;
+    }
+}
+
+header .container .links nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+header .container .links nav ul {
+    display: flex;
+    border-right: 1px solid white;
+}
+
+header .container .links nav ul li {
+    padding: 10px;
+}
+header .container .links nav ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    transition-duration: 1s;
+}
+header .container .links nav ul li a:hover {
+    color: var(--main-color);
+}
+
+header .container .links nav ul li a.active {
+color: var(--main-color);
+}
+/* start landing */
+.landing {
+    min-height: 100vh;
+    background-image: url("../media/1147576.jpg");
+    background-size: cover;
+    position: relative;
+}
+.landing .overlay {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.493);
+    background-size: cover;
+}
+.landing>.overlay>.text {
+    background-color: var(--second-color);
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+.landing>.overlay>.text>div {
+    max-width: 500px;
+}
+@media (max-width:767px){
+    .landing>.overlay>.text,
+    .landing>.overlay>.text>div {
+        width: 100%;
+    }
+}
+.landing>.overlay>.text>div h2 {
+    font-size: 30px;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 20px;
+}
+.landing>.overlay>.text>div h2 + p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: white;
+    font-weight: normal;
+}
+/* services */
+.header-section {
+    padding: 60px;
+}
+.header-section>h2 {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+.header-section>h2 + p {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #707070;
+    line-height: 1.5;
+    text-align: center;
+}
+.griding-serv {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 35px;
+    margin-bottom: 50px;
+}
+@media (min-width: 993px) {
+    .griding-serv {
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    }
+}
+.griding-serv div {
+    padding: 15px;
+    position: relative;
+}
+.griding-serv div i {
+    font-size: 30px;
+    position: absolute;
+    left: -30px;
+    top: 8px;
+    color: #707070;
+}
+.griding-serv div h3 {
+    color: var(--main-color);
+    margin-bottom: 15px;
+}
+.griding-serv div h3 + p {
+    color: #8f8f8f;
+    line-height: 2;
+}
+/* tecno */
+.tecno {
+    background-image: url("../media/bigstock-fintech-icon-on-abstract-fina-209216539.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+.tecno>.overlay {
+    background-color: rgba(0, 0, 0, 0.623);
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+.tecno>.overlay>div {
+    position: absolute;
+    width: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    background-color: var(--second-color);
+}
+@media (max-width: 767px) {
+    .tecno>.overlay>div {
+        width: 100%;
+    }
+}
+.tecno>.overlay>div h4 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 25px;
+}
+.tecno>.overlay>div p {
+    color: white;
+    margin: 10px;
+    font-size: 14px;
+}
+/* portfolio */
+
+.words {
+    display: flex;
+    justify-content: center;
+
+}
+.words p {
+    text-align: center;
+    padding: 15px;
+}
+.words p:first-child {
+    color: white;
+    background-color: var(--main-color);
+}
+
+.picflexing {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+    .picflexing .box {
+        flex-basis: 50%;
+    }
+}
+@media (min-width: 1199px) {
+    .picflexing .box {
+        flex-basis: 25%;
+    }
+}
+.picflexing .box img {
+    max-width: 100%;
+    transition: .5s;
+}
+.picflexing .box {
+    position: relative;
+    transition: 2s;
+}
+.picflexing .box:hover .moving {
+    display: block;
+}
+.picflexing .box:hover img {
+    transform: scale(1.5);
+    transform: rotate(3deg);
+}
+.picflexing .box .moving {
+    background-color: white;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    display: none;
+}
+.picflexing .box .moving h3 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+.picflexing .box .moving h3 + p {
+    font-size: 14px;
+    color: var(--main-color);
+    bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* video */
+.mp4 {
+position: relative;
+margin-bottom: 100px;
+margin-top: 100px;
+}
+.mp4 video {
+    width: 100%;
+}
+.mp4 div.text {
+    background-color: var(--second-color);
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    padding: 35px;
+    text-align: center;
+}
+
+.mp4 div.text h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+}
+.mp4 div.text p {
+    color: white;
+}
+.mp4 div.text button {
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-color: black;
+}
+/* about */
+.codebackground {
+    margin: 100px 0px 100px 0px;
+}
+.codebackground figure img {
+    width: 100%;
+}
+.about .container div.feat {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+}
+.about .container div.feat div {
+    text-align: center;
+}
+.about .container div.feat div h2 {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.about .container div.feat div p {
+    line-height: 1.8;
+    color: #8f8f8f;
+}
+.boss {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/* mypart */
+.about .container .mypart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media (max-width: 1000px) {
+    .about .container .mypart {
+    flex-basis: 100%;
+    }
+}
+
+.about .container .mypart div {
+    position: relative;
+    padding: 25px 5px 25px 100px;
+}
+.about .container .mypart div .hazem {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    left: 0px;
+    top: 10px;
+}
+.about .container .mypart div p {
+    line-height: 1.8;
+    color: #272727;
+}
+.about .container .mypart div button {
+    position: absolute;
+    color: #8f8f8f;
+    bottom: 5px;
+    right: 5px;
+}
+/* ratting */
+.rat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+@media (max-width: 1000px) {
+    .rat {
+    flex-basis: 100%;
+    }
+}
+.rat div.one {
+    padding: 12px 25px;
+    background-image: linear-gradient(90deg, #19c8fa 80%, #ccc 80%, #ccc 100%);
+}
+.rat div.two {
+    padding: 12px;
+    background-image: linear-gradient(90deg, #19c8fa 90%, #ccc 90%, #ccc 100%);
+}
+.rat div.three {
+    padding: 12px;
+    background-image: linear-gradient(90deg, #19c8fa 97%, #ccc 97%, #ccc 100%);
+}
+.rat div.four {
+    padding: 12px;
+    background-image: linear-gradient(90deg, #19c8fa 95%, #ccc 95%, #ccc 100%);
+}
+/* pricing */
+.pricing .plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    gap: 25px;
+    margin-bottom: 100px;
+}
+@media (max-width: 768px) {
+.pricing .plan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+    }
+}
+ .basic,
+ .premium,
+ .pro,
+ .platinum {
+    padding: 15px;
+    background-color: rgba(245, 245, 245, 0.719);
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+.pricing .plan h2 {
+    margin: 10px 0px 30px 0px;
+    font-weight: 100;
+    letter-spacing: 1.8px;
+}
+.pricing .plan div.header {
+    max-width: 100%;
+    text-align: center;
+    padding: 15px 0px 15px 0px;
+    border-bottom: 2px solid var(--main-color);
+}
+.pricing .plan div.header span {
+    font-size: 40px;
+    font-weight: 800;
+}
+.pricing .plan div.header span::before {
+    content: "$";
+    font-size: 25px;
+    position: relative;
+    top: -30px;
+    margin-right: 2px;
+    font-weight: 100;
+}
+.pricing .plan div.header span::after {
+    content: "/Mo";
+    font-size: 20px;
+    font-weight: 200;
+    position: relative;
+    right: -5px;
+}
+
+
+.pricing .plan div.header + ul {
+    text-align: center;
+}
+.pricing .plan div.header + ul li {
+    padding: 15px 0px 15px 0px;
+    margin: 10px 25px;
+    border-bottom: 1px solid var(--main-color);
+}
+.pricing .plan .foot {
+    padding: 30px;
+    position: relative;
+}
+.pricing .plan .foot a {
+    left: calc(50% - 45px);
+    bottom: 50%;
+    transform: translateY(75%);
+    background-color: var(--main-color);
+    padding: 15px;
+   text-decoration: none;
+   color: white;
+   position: absolute;
+   max-width: 100%;
+   max-height: 100%;
+}
+
